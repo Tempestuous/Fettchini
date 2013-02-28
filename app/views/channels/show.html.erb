@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Method type:</b>
+  <%= @channel.method_type %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @channel.address %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @channel.user_id %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @channel.frequency %>
+</p>
+
+
+<%= link_to 'Edit', edit_channel_path(@channel) %> |
+<%= link_to 'Back', channels_path %>

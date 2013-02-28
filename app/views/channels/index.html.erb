@@ -1,0 +1,32 @@
+<h1>Listing channels</h1>
+
+<table>
+  <tr>
+    <th>Method type</th>
+    <th>Address</th>
+    <th>User</th>
+    <th>Frequency</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% @channels.sort! { |a,b| a.method_type <=> b.method_type } %>
+
+<% @channels.each do |channel| %>
+  <tr>
+    <td><%= channel.method_type %></td>
+    <td><%= channel.address %></td>
+    <td><%= channel.user_id %></td>
+    <td><%= channel.frequency %></td>
+    <td><%= link_to 'Show', channel %></td>
+    <td><%= link_to 'Edit', edit_channel_path(channel) %></td>
+    <td><%= link_to 'Destroy', channel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Channel', new_channel_path %>
